@@ -563,7 +563,7 @@ const LessonCard = ({ lang, subject = 'Unknown Subject', program = 'Unknown Prog
                         <p className="text-base font-bold font-sans text-red-700 mt-2">
                             {t.checkDetails}
                             <a
-                                href="mailto:support@example.com"
+                                href="https://t.me/DrHelloWorld"
                                 className="text-indigo-600 hover:text-indigo-700 underline transition-all duration-300 ml-1"
                                 aria-label={lang === 'en' ? 'Contact support' : 'ទាក់ទងផ្នែកជំនួយ'}
                             >
