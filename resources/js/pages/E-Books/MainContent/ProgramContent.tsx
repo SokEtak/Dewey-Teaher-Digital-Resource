@@ -25,8 +25,8 @@ const ProgramContent = ({ lang, campus, setCampus, program, setProgram }: Progra
         <div className="flex w-full max-w-xl items-center justify-center mt-3">
             <div className="bg-white rounded-2xl shadow-lg p-8 w-full border-t-4 border-indigo-600 hover:shadow-xl transition-all duration-300 battambang-font">
                 <Head title={isKhmer ? 'ជ្រើសរើសកម្មវិធីសិក្សា' : 'Program Selection'} />
-                <h2 className="text-2xl sm:text-1xl font-bold text-indigo-600 mb-4 text-center battambang-font">
-                    {isKhmer ? 'ជ្រើសរើសកម្មវីធី និង ទីតាំង' : 'Select Program & Campus'}
+                <h2 className="text-2xl sm:text-2xl font-bold text-indigo-600 mb-4 text-center battambang-font">
+                    {isKhmer ? 'ជ្រើសរើសកម្មវីធី និង ទីតាំង' : 'Program & Campus'}
                 </h2>
                 {/* Campus Select */}
                 <div className="mb-5">
@@ -43,7 +43,7 @@ const ProgramContent = ({ lang, campus, setCampus, program, setProgram }: Progra
                                     <>
                                         <SelectItem value="iconic">សាលាឌូវី សាខាអាយខនិក</SelectItem>
                                         <SelectItem value="ochar">សាលាឌូវី សាខាអូរចារ</SelectItem>
-                                        <SelectItem value="banteay">សាខាបន្ទាយមានជ័យ</SelectItem>
+                                        <SelectItem value="bmc">សាខាបន្ទាយមានជ័យ</SelectItem>
                                         <SelectItem value="childcare">ឌូវី ឆាយលឃែរ ហោស៍</SelectItem>
                                         <SelectItem value="kindergarten">មត្តេយ្យ ឌូវី</SelectItem>
                                     </>
@@ -51,9 +51,10 @@ const ProgramContent = ({ lang, campus, setCampus, program, setProgram }: Progra
                                     <>
                                         <SelectItem value="iconic">Iconic Branch</SelectItem>
                                         <SelectItem value="ochar">Ochar Branch</SelectItem>
-                                        <SelectItem value="banteay">Banteay Meanchey</SelectItem>
+                                        <SelectItem value="bmc">Banteay Meanchey</SelectItem>
                                         <SelectItem value="childcare">Childcare House</SelectItem>
                                         <SelectItem value="kindergarten">Kindergarten</SelectItem>
+
                                     </>
                                 )}
                             </SelectGroup>
@@ -74,15 +75,15 @@ const ProgramContent = ({ lang, campus, setCampus, program, setProgram }: Progra
                             <SelectGroup>
                                 {isKhmer ? (
                                     <>
-                                        <SelectItem value="cambodia">កម្មវិធីសិក្សាខ្មែរ</SelectItem>
-                                        <SelectItem value="america">កម្មវិធីសិក្សាអាមេរិកកាំង</SelectItem>
-                                        <SelectItem value="extra">កម្មវិធីបន្ថែម</SelectItem>
+                                        <SelectItem value="cambodia" >កម្មវិធីសិក្សាខ្មែរ</SelectItem>
+                                        <SelectItem value="america" disabled={true}>កម្មវិធីសិក្សាអាមេរិកកាំង(មកដល់ឆាប់ៗនេះ)</SelectItem>
+                                        <SelectItem value="extra" disabled={true}>កម្មវិធីបន្ថែម(មកដល់ឆាប់ៗនេះ)</SelectItem>
                                     </>
                                 ) : (
                                     <>
                                         <SelectItem value="cambodia">Cambodia Curriculum</SelectItem>
-                                        <SelectItem value="america">American Curriculum</SelectItem>
-                                        <SelectItem value="extra">Extra Curricular Curriculum</SelectItem>
+                                        <SelectItem value="america" disabled={true}>American Curriculum(coming soon)</SelectItem>
+                                        <SelectItem value="extra" disabled={true}>Extra Curricular Curriculum(coming soon)</SelectItem>
                                     </>
                                 )}
                             </SelectGroup>

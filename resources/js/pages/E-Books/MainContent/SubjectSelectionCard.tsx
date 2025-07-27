@@ -51,12 +51,6 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
-            "america": [
-                { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
-                { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
-                { value: 'social', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' }
-            ],
-            "extras": []
         },
         "2": {
             "cambodia": [
@@ -67,12 +61,6 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
-            "america": [
-                { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
-                { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
-                { value: 'social', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' }
-            ],
-            "extras": []
         },
         "3": {
             "cambodia": [
@@ -84,12 +72,6 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
-            "america": [
-                { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
-                { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
-                { value: 'social', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' }
-            ],
-            "extras": []
         },
         "4": {
             "cambodia": [
@@ -103,12 +85,6 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
-            "america": [
-                { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
-                { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
-                { value: 'social', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' }
-            ],
-            "extras": []
         },
         "5": {
             "cambodia": [
@@ -120,12 +96,6 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
-            "america": [
-                { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
-                { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
-                { value: 'social', en: 'Social Science', km: 'សិក្សាសង្គម' }
-            ],
-            "extras": []
         },
         "6": {
             "cambodia": [
@@ -138,12 +108,6 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
-            "america": [
-                { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
-                { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
-                { value: 'social', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' }
-            ],
-            "extras": []
         },
         "7": {
             "cambodia": [
@@ -155,12 +119,6 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
-            "america": [
-                { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
-                { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
-                { value: 'social', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' }
-            ],
-            "extras": []
         },
         "8": {
             "cambodia": [
@@ -170,12 +128,6 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
                 { value: 'social', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' },
             ],
-            "america": [
-                { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
-                { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
-                { value: 'social', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' }
-            ],
-            "extras": []
         },
         "9": {
             "cambodia": [
@@ -185,12 +137,6 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
                 { value: 'social', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' },
             ],
-            "america": [
-                { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
-                { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
-                { value: 'social', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' }
-            ],
-            "extras": []
         },
         "10": {
             "cambodia": [
@@ -208,12 +154,6 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
-            "america": [
-                { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
-                { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
-                { value: 'socialscience', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' }
-            ],
-            "extras": []
         },
         "11": {
             "cambodia": [
@@ -230,16 +170,11 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
-            "america": [
-                { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
-                { value: 'chemistry', en: 'Chemistry', km: 'គីមីវិទ្យា' },
-                { value: 'biology', en: 'Biology', km: 'ជីវវិទ្យា' }
-            ],
-            "extras": []
         },
         "12": {
             "cambodia": [
                 { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
+                { value: 'economics', en: 'Economics', km: 'សេដ្ធកិច្ចវិទ្យា' },
                 { value: 'chemistry', en: 'Chemistry', km: 'គីមីវិទ្យា' },
                 { value: 'biology', en: 'Biology', km: 'ជីវវិទ្យា' },
                 { value: 'history', en: 'History', km: 'ប្រវិត្តិសាស្ត្រ' },
@@ -252,47 +187,24 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
-            "america": [
-                { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
-                { value: 'chemistry', en: 'Chemistry', km: 'គីមីវិទ្យា' },
-                { value: 'biology', en: 'Biology', km: 'ជីវវិទ្យា' }
-            ],
-            "extras": []
         },
-        "club1": {
-            "cambodia": [],
-            "america": [],
-            "extras": [
-                { value: 'art', en: 'Art', km: 'សិល្បៈ' },
-                { value: 'music', en: 'Music', km: 'តន្ត្រី' },
-                { value: 'sports', en: 'Sports', km: 'កីឡា' }
-            ]
-        },
-        "club2": {
-            "cambodia": [],
-            "america": [],
-            "extras": [
-                { value: 'drama', en: 'Drama', km: 'ល្ខោន' },
-                { value: 'dance', en: 'Dance', km: 'របាំ' },
-                { value: 'debate', en: 'Debate', km: 'ការពិភាក្សា' }
-            ]
-        }
     };
 
+    // Map grade text
+    const gradeText = grade
+        ? (lang === 'en'
+            ? (["club1", "club2"].includes(grade) ? `${grade.charAt(0).toUpperCase() + grade.slice(4)} Level` : `Grade ${grade}`)
+            : (["club1", "club2"].includes(grade) ? `${numberMap[grade]} កម្រិត` : `ថ្នាក់ទី ${numberMap[grade]}`))
+        : '-';
+
     // Map program text
-    const programText =
-        program === "cambodia"
+    const programText = program
+        ? (program === "cambodia"
             ? (lang === 'en' ? "Cambodia Curriculum" : "កម្មវិធីសិក្សាខ្មែរ")
             : program === "america"
                 ? (lang === 'en' ? "American Curriculum" : "កម្មវិធីសិក្សាអាមេរិកកាំង")
-                : (lang === 'en' ? "Extra Curricular Curriculum" : "កម្មវិធីសិក្សាបន្ថែម");
-
-    // Display program and grade with Khmer numbers when lang is 'km'
-    const programGradeText = grade && program
-        ? (lang === 'en'
-                ? (["club1", "club2"].includes(grade) ? `${grade.charAt(0).toUpperCase() + grade.slice(4)} Level: ` : `Grade ${grade}: `) + programText
-                : (["club1", "club2"].includes(grade) ? `${numberMap[grade]} កម្រិត: ` : `ថ្នាក់ទី ${numberMap[grade]}: `) + programText
-        ) : '-';
+                : (lang === 'en' ? "Extra Curricular Curriculum" : "កម្មវិធីសិក្សាបន្ថែម"))
+        : '-';
 
     // Get subjects for the current grade and program, default to empty array if invalid
     const availableSubjects = grade && program && grade in gradeSubjects && program in gradeSubjects[grade]
@@ -309,14 +221,19 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
             <div className="bg-white rounded-2xl shadow-lg p-6 w-full border-t-4 border-indigo-600 hover:shadow-xl transition-all duration-300">
                 <Head title={lang === 'en' ? 'Subject Selection' : 'ជ្រើសរើសមុខវិជ្ជា'} />
                 {/* Program and grade */}
-                <h2 className="text-2xl sm:text-3xl font-bold text-indigo-600 mb-4 text-center">
-                    {programGradeText}
+                <h2 className="text-xl sm:text-2xl font-bold text-indigo-600 mb-2 text-center">
+                    {programText}
                 </h2>
 
+
                 {/* Title with graduation cap accent */}
-                <h1 className="text-2xl sm:text-3xl font-bold text-center text-indigo-600 mb-6 relative">
-                    {lang === 'en' ? 'Choose Your Subject' : 'ជ្រើសរើសមុខវិជ្ជា'}
+                <h1 className="text-xl sm:text-2xl font-bold text-center text-indigo-600 mb-2 relative">
+                    {lang === 'en' ? 'Choose Your Subject For' : 'ជ្រើសរើសមុខវិជ្ជាសម្រាប់'}
                 </h1>
+
+                <h2 className="text-xl sm:text-2xl font-bold text-indigo-600 mb-4 text-center">
+                    {gradeText}
+                </h2>
 
                 {/* Subject Select */}
                 <div className="mb-6">

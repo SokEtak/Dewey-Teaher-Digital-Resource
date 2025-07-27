@@ -59,7 +59,7 @@ const GradeSelectionCard = ({ lang, setLang, grade, setGrade, program, url }: Gr
                     </label>
                     <Select onValueChange={setGrade} value={grade}>
                         <SelectTrigger className="w-full bg-white text-gray-800 rounded-lg p-3 border border-gray-300 focus:ring-2 focus:ring-violet-400">
-                            <SelectValue placeholder={isKhmer ? 'ជ្រើសរើសថ្នាក់' : 'Select a grade'} />
+                            <SelectValue placeholder={isKhmer ? 'ជ្រើសរើស' : 'Choose'} />
                         </SelectTrigger>
                         <SelectContent className="bg-white text-gray-800 rounded-lg border border-gray-300">
                             <SelectGroup>
@@ -71,8 +71,8 @@ const GradeSelectionCard = ({ lang, setLang, grade, setGrade, program, url }: Gr
                                         </span>
                                     </SelectItem>
                                 ))}
-                                <SelectItem value="club1">{isKhmer ? 'ក្លឹប១' : 'Club 1'}</SelectItem>
-                                <SelectItem value="club2">{isKhmer ? 'ក្លឹប២' : 'Club 2'}</SelectItem>
+                                {/*<SelectItem value="club1">{isKhmer ? 'ក្លឹប១' : 'Club 1'}</SelectItem>*/}
+                                {/*<SelectItem value="club2">{isKhmer ? 'ក្លឹប២' : 'Club 2'}</SelectItem>*/}
                             </SelectGroup>
                         </SelectContent>
                     </Select>
