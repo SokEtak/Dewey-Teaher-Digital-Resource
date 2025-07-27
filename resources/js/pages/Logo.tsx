@@ -8,7 +8,7 @@ const Logo = ({ lang, setLang }: { lang: 'en' | 'km'; setLang: (lang: 'en' | 'km
                 {isKhmer ? 'សាលាអន្តរជាតិ ឌូវី' : 'Dewey International School'}
             </h1>
             <h1 className="text-2xl font-bold text-orange-500">
-                {isKhmer ? 'ការសិក្សាផ្សារភ្ជាប់ជាមួយការនុវត្ត' : 'Learning By Doing'}
+                {isKhmer ? 'ការសិក្សាផ្សារភ្ជាប់ជាមួយការអនុវត្ត' : 'Learning By Doing'}
             </h1>
         </div>
     );
