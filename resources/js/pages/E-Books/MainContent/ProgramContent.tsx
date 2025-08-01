@@ -76,14 +76,10 @@ const ProgramContent = ({ lang, campus, setCampus, program, setProgram }: Progra
                                 {isKhmer ? (
                                     <>
                                         <SelectItem value="cambodia" >កម្មវិធីសិក្សាខ្មែរ</SelectItem>
-                                        <SelectItem value="america" disabled={true}>កម្មវិធីសិក្សាអាមេរិកកាំង(មកដល់ឆាប់ៗនេះ)</SelectItem>
-                                        <SelectItem value="extra" disabled={true}>កម្មវិធីបន្ថែម(មកដល់ឆាប់ៗនេះ)</SelectItem>
                                     </>
                                 ) : (
                                     <>
                                         <SelectItem value="cambodia">Cambodia Curriculum</SelectItem>
-                                        <SelectItem value="america" disabled={true}>American Curriculum(coming soon)</SelectItem>
-                                        <SelectItem value="extra" disabled={true}>Extra Curricular Curriculum(coming soon)</SelectItem>
                                     </>
                                 )}
                             </SelectGroup>

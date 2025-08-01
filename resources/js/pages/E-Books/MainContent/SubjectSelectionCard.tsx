@@ -23,8 +23,6 @@ const numberMap: { [key: string]: string } = {
     '10': '១០',
     '11': '១១',
     '12': '១២',
-    'club1': 'ក្លឹប១',
-    'club2': 'ក្លឹប២',
 };
 
 interface SubjectSelectionCardProps {
@@ -77,7 +75,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
             "cambodia": [
                 { value: 'chaching', en: 'Cha Ching', km: 'កម្មវិធីសិក្សា-ឆាឈីង' },
                 { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
-                { value: 'history', en: 'History Of Science', km: 'ប្រវិត្តិសាស្ត្រ' },
+                { value: 'history', en: 'History Of Science', km: 'ប្រវិត្តិវិទ្យា' },
                 { value: 'khmer', en: 'Khmer Language', km: 'ភាសាខ្មែរ' },
                 { value: 'english', en: 'English', km: 'ភាសាអង់គ្លេស' },
                 { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
@@ -100,7 +98,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
         "6": {
             "cambodia": [
                 { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
-                { value: 'history', en: 'History', km: 'ប្រវិត្តិសាស្ត្រ' },
+                { value: 'history', en: 'History', km: 'ប្រវិត្តិវិទ្យា' },
                 { value: 'khmer', en: 'Khmer Language', km: 'ភាសាខ្មែរ' },
                 { value: 'english', en: 'English', km: 'ភាសាអង់គ្លេស' },
                 { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
@@ -147,10 +145,9 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'biology', en: 'Biology', km: 'ជីវវិទ្យា' },
                 { value: 'physics', en: 'Physics', km: 'រូបវិទ្យា' },
                 { value: 'chemistry', en: 'Chemistry', km: 'គីមីវិទ្យា' },
-                { value: 'morality', en: 'Morality-Civics', km: 'សីលធម៌-ពលរដ្ធវិជ្ជា' },
+                { value: 'morality', en: 'Morality-Civics', km: 'សីលធម៌-ពលរដ្ធ' },
                 { value: 'khmer', en: 'Khmer Language', km: 'ភាសាខ្មែរ' },
                 { value: 'english', en: 'English', km: 'ភាសាអង់គ្លេស' },
-                { value: 'homeeconomic', en: 'Home Economic', km: 'គេហវិទ្យា' },
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
@@ -160,11 +157,11 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
                 { value: 'chemistry', en: 'Chemistry', km: 'គីមីវិទ្យា' },
                 { value: 'biology', en: 'Biology', km: 'ជីវវិទ្យា' },
-                { value: 'history', en: 'History', km: 'ប្រវិត្តិសាស្ត្រ' },
-                { value: 'geology', en: 'Geology', km: 'ភូគព្ភវិទ្យា' },
+                { value: 'history', en: 'History', km: 'ប្រវិត្តវិទ្យា' },
+                { value: 'geology', en: 'Geology', km: 'ផែនដីវិទ្យា' },
                 { value: 'geography', en: 'Geography', km: 'ភូមិវិទ្យា' },
                 { value: 'physics', en: 'Physics', km: 'រូបវិទ្យា' },
-                { value: 'morality', en: 'Morality', km: 'សីលធម៌' },
+                { value: 'morality', en: 'Morality', km: 'សីលធម៌-ពលរដ្ធ' },
                 { value: 'english', en: 'English', km: 'ភាសាអង់គ្លេស' },
                 { value: 'khmer', en: 'Khmer Language', km: 'អក្សរសាស្ត្រខ្មែរ' },
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
@@ -174,14 +171,13 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
         "12": {
             "cambodia": [
                 { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
-                { value: 'economics', en: 'Economics', km: 'សេដ្ធកិច្ចវិទ្យា' },
                 { value: 'chemistry', en: 'Chemistry', km: 'គីមីវិទ្យា' },
                 { value: 'biology', en: 'Biology', km: 'ជីវវិទ្យា' },
-                { value: 'history', en: 'History', km: 'ប្រវិត្តិសាស្ត្រ' },
+                { value: 'history', en: 'History', km: 'ប្រវិត្តិវិទ្យា' },
                 { value: 'geology', en: 'Earth And Environmental Science', km: 'ផែនដីវិទ្យានិងបរិស្ថានវិទ្យា' },
                 { value: 'geography', en: 'Geography', km: 'ភូមិវិទ្យា' },
                 { value: 'physics', en: 'Physics', km: 'រូបវិទ្យា' },
-                { value: 'morality', en: 'Morality-Civics', km: 'សីលធម៌' },
+                { value: 'morality', en: 'Morality-Civics', km: 'សីលធម៌-ពលរដ្ធ' },
                 { value: 'english', en: 'English', km: 'ភាសាអង់គ្លេស' },
                 { value: 'khmer', en: 'Khmer Language', km: 'អក្សរសាស្ត្រខ្មែរ' },
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },

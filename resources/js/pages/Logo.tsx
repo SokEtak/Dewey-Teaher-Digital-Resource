@@ -1,4 +1,4 @@
-const Logo = ({ lang, setLang }: { lang: 'en' | 'km'; setLang: (lang: 'en' | 'km') => void }) => {
+const Logo = ({ lang }: { lang: 'en' | 'km'; setLang: (lang: 'en' | 'km') => void }) => {
     const isKhmer = lang === 'km';
 
     return (

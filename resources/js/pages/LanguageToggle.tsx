@@ -12,7 +12,7 @@ const LanguageToggle = ({ lang, setLang }: LanguageToggleProps) => {
                 onClick={() => setLang('en')}
                 className={`px-5 py-2 rounded-lg font-semibold transition-all duration-300 ${
                     !isKhmer
-                        ? 'bg-orange-500 text-gray-700 shadow-md'
+                        ? 'bg-orange-500 text-white shadow-md'
                         : 'bg-green-500 text-gray-700 hover:bg-orange-500 hover:shadow-sm'
                 }`}
             >

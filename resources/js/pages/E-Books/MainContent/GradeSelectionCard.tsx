@@ -71,8 +71,6 @@ const GradeSelectionCard = ({ lang, setLang, grade, setGrade, program, url }: Gr
                                         </span>
                                     </SelectItem>
                                 ))}
-                                {/*<SelectItem value="club1">{isKhmer ? 'ក្លឹប១' : 'Club 1'}</SelectItem>*/}
-                                {/*<SelectItem value="club2">{isKhmer ? 'ក្លឹប២' : 'Club 2'}</SelectItem>*/}
                             </SelectGroup>
                         </SelectContent>
                     </Select>
