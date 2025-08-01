@@ -1,16 +1,44 @@
-const Logo = ({ lang }: { lang: 'en' | 'km'; setLang: (lang: 'en' | 'km') => void }) => {
+import { motion } from 'framer-motion';
+
+interface LogoProps {
+    lang: 'en' | 'km';
+}
+
+const Logo = ({ lang }: LogoProps) => {
     const isKhmer = lang === 'km';
 
     return (
-        <div className="mt-1 text-center">
-            <img src="/images/DIS(no%20back).png" alt="Logo" className="mx-auto" style={{ width: "120px", height: "100px" }} />
-            <h1 className="text-2xl font-bold text-green-500">
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className=" mt-2 text-center max-w-sm sm:max-w-md md:max-w-xl mx-auto"
+        >
+            <motion.img
+                src="/images/DIS(no%20back).png"
+                alt="Dewey International School Logo"
+                className="mx-auto w-32 sm:w-36 md:w-40 h-auto"
+                initial={{ scale: 0.7, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
+            />
+            <motion.h1
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="text-2xl sm:text-3xl md:text-3xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent battambang-font"
+            >
                 {isKhmer ? 'សាលាអន្តរជាតិ ឌូវី' : 'Dewey International School'}
-            </h1>
-            <h1 className="text-2xl font-bold text-orange-500">
+            </motion.h1>
+            <motion.h1
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="text-2xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent battambang-font"
+            >
                 {isKhmer ? 'ការសិក្សាផ្សារភ្ជាប់ជាមួយការអនុវត្ត' : 'Learning By Doing'}
-            </h1>
-        </div>
+            </motion.h1>
+        </motion.div>
     );
 };
 

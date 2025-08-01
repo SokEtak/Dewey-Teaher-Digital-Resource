@@ -1,10 +1,13 @@
 import { Head } from '@inertiajs/react';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import Select from 'react-select';
 import { PDF_BASE, FLIPBOOK_BASE, AI_TOOLS_BASE, VIRTUAL_LAB_BASE, constructFullUrl } from '@/types/urlUtils';
 
 // Mapping of English numbers to Khmer numbers
 const numberMap: { [key: string]: string } = {
     '1': '១', '2': '២', '3': '៣', '4': '៤', '5': '៥', '6': '៦',
-    '7': '៧', '8': '៨', '9': '៩', '10': '១០', '11': '១១', '12': '១២',
+    '7': '៧', '8': '៨', '9': '៩', '10': '១ៀ', '11': '១១', '12': '១២',
 };
 
 // Mapping of English subjects to Khmer subjects
@@ -24,11 +27,11 @@ const subjectTranslations: { [key: string]: string } = {
     biology: 'ជីវវិទ្យា',
     physics: 'រូបវិទ្យា',
     chemistry: 'គីមីវិទ្យា',
-    morality: 'សីលធម៌ ពលរដ្ធ'
+    morality: 'សីលធម៌ ពលរដ្ឋ'
 };
 
 interface LessonCardProps {
-    lang: 'en' | 'km';
+    lang?: 'en' | 'km';
     subject?: string;
     program?: string;
     grade?: string;
@@ -86,10 +89,59 @@ const commonResources = {
     ],
 };
 
-const LessonCard = ({ lang, subject = 'Unknown Subject', program = 'Unknown Program', grade = 'Unknown Grade', url }: LessonCardProps) => {
+const LessonCard = ({ lang: initialLang = 'en', subject = 'Unknown Subject', program = 'Unknown Program', grade = 'Unknown Grade', url }: LessonCardProps) => {
+    const [lang, setLang] = useState<'en' | 'km'>(initialLang);
     const normalizedSubject = subject.toLowerCase().replace(/\s+/g, '');
     parseInt(grade, 10);
-// Define grades object
+
+    // Language options for the switcher
+    const languageOptions = [
+        { value: 'en', label: 'English' },
+        { value: 'km', label: 'ភាសាខ្មែរ' },
+    ];
+
+    // Custom styles for react-select
+    const customSelectStyles = {
+        control: (provided: any) => ({
+            ...provided,
+            background: 'linear-gradient(to right, #f97316, #ec4899, #9333ea)',
+            color: '#ffffff',
+            fontFamily: 'Inter, "Noto Sans Khmer", system-ui, -apple-system, sans-serif',
+            fontSize: '0.875rem',
+            lineHeight: '1.25rem',
+            border: 'none',
+            borderRadius: '1.5rem',
+            padding: '0.5rem 0.75rem',
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+            cursor: 'pointer',
+        }),
+        singleValue: (provided: any) => ({
+            ...provided,
+            color: '#ffffff',
+            fontWeight: 500,
+        }),
+        menu: (provided: any) => ({
+            ...provided,
+            background: '#ffffff',
+            borderRadius: '1rem',
+            fontFamily: 'Inter, "Noto Sans Khmer", system-ui, -apple-system, sans-serif',
+            fontSize: '0.875rem',
+        }),
+        option: (provided: any, state: any) => ({
+            ...provided,
+            background: state.isSelected
+                ? 'linear-gradient(to right, #f97316, #ec4899, #9333ea)'
+                : state.isFocused
+                    ? '#f3e8ff'
+                    : '#ffffff',
+            color: state.isSelected ? '#ffffff' : '#374151',
+            cursor: 'pointer',
+            fontWeight: 500,
+            padding: '0.75rem 1rem',
+        }),
+    };
+
+    // Define grades object
     const grades: { [key: string]: { [key: string]: { [key: string]: { parts?: { pdf?: string; flipbook?: string; level?: string }[]; pdf?: string; flipbook?: string; aiTools?: { url: string; name?: string }[]; virtualLabLinks?: { url: string; name?: string }[] } } } } = {
         "1": {
             cambodia: {
@@ -288,7 +340,7 @@ const LessonCard = ({ lang, subject = 'Unknown Subject', program = 'Unknown Prog
             viewPdf: 'មើល PDF',
             viewFlipbook: 'មើល Flipbook',
             noMaterials: 'គ្មានសម្ភារៈសម្រាប់',
-            invalidProgram: 'កម្មវិធីមិនត្រឹមត្រូវ:',
+            invalidProgram: 'កម্ঘវិធីមិនត្រឹមត្រូវ:',
             invalidGrade: 'ថ្នាក់មិនត្រឹមត្រូវ:',
             checkDetails: 'សូមពិនិត្យថ្នាក់, កម្មវិធី, ឬមុខវិជ្ជា, ឬ ',
             contactSupport: 'ទាក់ទងផ្នែកជំនួយ',
@@ -296,7 +348,7 @@ const LessonCard = ({ lang, subject = 'Unknown Subject', program = 'Unknown Prog
         },
     };
 
-    const t = lang === 'km' ? translations.km : translations.en;
+    const t = translations[lang];
 
     // Program display name
     const programDisplay = {
@@ -304,109 +356,236 @@ const LessonCard = ({ lang, subject = 'Unknown Subject', program = 'Unknown Prog
         km: program === 'cambodia' ? 'ខ្មែរ' : program === 'america' ? 'អាឮមេរិកកាំង' : 'បន្ថែម',
     };
 
-    // Render link component
+    // Render link component with hover animation
     const renderLink = (href: string | null, text: string, color: string, ariaLabel: string) => href && (
-        <a
+        <motion.a
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`px-3 py-2 ${color} text-white font-semibold rounded-lg text-center text-base transition-all duration-300 hover:brightness-90`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.5 }}
+            className={`block w-full px-4 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 text-center font-medium text-sm sm:text-base md:text-lg text-white ${color} rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 font-sans`}
             aria-label={ariaLabel}
         >
             {text}
-        </a>
+        </motion.a>
     );
 
     return (
-        <div className="flex w-full max-w-xl items-center justify-center mt-3">
-            <div className="bg-white rounded-2xl shadow-lg p-6 w-full border-t-4 border-indigo-600 hover:shadow-xl transition-all duration-300">
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            className="flex w-full max-w-sm sm:max-w-md md:max-w-xl p-4 sm:p-6 md:p-8 items-center justify-center mx-auto"
+        >
+            <div className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-3xl shadow-2xl p-6 sm:p-8 md:p-10 w-full border border-purple-300 transition-all duration-500 hover:shadow-3xl font-sans relative overflow-hidden">
                 <Head title={t.title} />
-                <h1 className="text-2xl sm:text-3xl font-bold text-center text-indigo-600 mb-4">{t.title}</h1>
-                <h2 className="text-xl sm:text-3xl font-bold text-indigo-600 mb-4 text-center">
+
+                {/* Decorative Elements */}
+                <motion.div
+                    className="absolute top-0 left-0 w-36 sm:w-40 h-36 sm:h-40 bg-gradient-to-br from-orange-400 via-pink-400 to-purple-400 rounded-full opacity-30 -translate-x-16 sm:-translate-x-20 -translate-y-16 sm:-translate-y-20"
+                    animate={{ scale: [1, 1.1, 1], rotate: [0, 10, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, repeatType: 'reverse' }}
+                />
+                <motion.div
+                    className="absolute bottom-0 right-0 w-44 sm:w-48 h-44 sm:h-48 bg-gradient-to-tl from-teal-400 via-blue-400 to-purple-400 rounded-full opacity-30 translate-x-20 sm:translate-x-24 translate-y-20 sm:translate-y-24"
+                    animate={{ scale: [1, 1.2, 1], rotate: [0, -10, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, repeatType: 'reverse' }}
+                />
+
+                {/* Language Switcher */}
+                <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 0.5 }}
+                    className="mb-6 sm:mb-8 md:mb-10 flex justify-center"
+                >
+                    <Select
+                        options={languageOptions}
+                        value={languageOptions.find(option => option.value === lang)}
+                        onChange={(selected) => setLang(selected?.value as 'en' | 'km')}
+                        styles={customSelectStyles}
+                        className="w-32 sm:w-36 md:w-40"
+                        aria-label={lang === 'en' ? 'Select language' : 'ជ្រើសរើសភាសា'}
+                    />
+                </motion.div>
+
+                {/* Title */}
+                <motion.h1
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.3, duration: 0.5 }}
+                    className="text-lg sm:text-xl md:text-2xl font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-6 sm:mb-8 md:mb-10 text-center font-sans"
+                >
+                    {t.title}
+                </motion.h1>
+
+                {/* Grade and Program */}
+                <motion.h2
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.4, duration: 0.5 }}
+                    className="text-lg sm:text-xl md:text-2xl font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-6 sm:mb-8 md:mb-10 text-center font-sans"
+                >
                     {t.gradeLabel} {lang === 'km' ? numberMap[grade] || grade : grade}: {programDisplay[lang]} {t.programLabel}
-                </h2>
-                <p className="text-base font-bold font-sans text-gray-700 mb-4">
-                    <span className="font-bold font-sans">{t.subjectLabel}</span> {lang === 'km' ? subjectTranslations[normalizedSubject] : subject.charAt(0).toUpperCase() + subject.slice(1)}
-                </p>
+                </motion.h2>
+
+                {/* Subject */}
+                <motion.p
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.5, duration: 0.5 }}
+                    className="text-sm sm:text-base md:text-lg font-medium text-gray-700 mb-6 sm:mb-8 md:mb-10 font-sans text-center"
+                >
+                    <span className="font-semibold">{t.subjectLabel} </span>
+                    {lang === 'km' ? subjectTranslations[normalizedSubject] : subject.charAt(0).toUpperCase() + subject.slice(1)}
+                </motion.p>
+
                 {(fullParts.length > 0 || fullPdf || fullFlipbook || fullAiTools.length > 0 || fullVirtualLabLinks.length > 0) ? (
-                    <div className="flex flex-col gap-4">
-                        <p className="text-lg font-bold font-sans text-gray-700">{t.accessMaterials}</p>
+                    <div className="flex flex-col gap-6">
+                        <motion.p
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.6, duration: 0.5 }}
+                            className="text-sm sm:text-base md:text-lg font-semibold text-gray-700 font-sans flex items-center"
+                        >
+                            {t.accessMaterials}
+                        </motion.p>
                         {fullParts.length > 0 ? (
-                            <div className="flex flex-col gap-3">
+                            <motion.div
+                                initial={{ opacity: 0, y: 15 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.7, duration: 0.5 }}
+                                className="flex flex-col gap-3"
+                            >
                                 {fullParts.map((part, index) => (
-                                    <div key={index} className="flex gap-3">
+                                    <div key={index} className="flex flex-col sm:flex-row gap-3">
                                         {renderLink(
                                             part.pdf,
                                             `${t.viewPdf} ${part.level || `Part ${index + 1}`}`,
-                                            'bg-indigo-600',
+                                            'bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 hover:from-orange-600 hover:via-pink-600 hover:to-purple-600',
                                             lang === 'en' ? `View ${subject} ${t.gradeLabel} ${grade} ${part.level || `Part ${index + 1}`} PDF` : `មើល ${subject} ${t.gradeLabel} ${grade} ${part.level || `ផ្នែក ${index + 1}`} PDF`
                                         )}
                                         {renderLink(
                                             part.flipbook,
                                             `${t.viewFlipbook} ${part.level || `Part ${index + 1}`}`,
-                                            'bg-green-600',
+                                            'bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 hover:from-teal-600 hover:via-blue-600 hover:to-purple-600',
                                             lang === 'en' ? `View ${subject} ${t.gradeLabel} ${grade} ${part.level || `Part ${index + 1}`} Flipbook` : `មើល ${subject} ${t.gradeLabel} ${grade} ${part.level || `ផ្នែក ${index + 1}`} Flipbook`
                                         )}
                                     </div>
                                 ))}
-                            </div>
+                            </motion.div>
                         ) : (
-                            <div className="flex flex-col gap-3">
-                                {renderLink(fullPdf, t.viewPdf, 'bg-indigo-600', lang === 'en' ? `View ${subject} ${t.gradeLabel} ${grade} PDF` : `មើល ${subject} ${t.gradeLabel} ${grade} PDF`)}
-                                {renderLink(fullFlipbook, t.viewFlipbook, 'bg-green-600', lang === 'en' ? `View ${subject} ${t.gradeLabel} ${grade} Flipbook` : `មើល ${subject} ${t.gradeLabel} ${grade} Flipbook`)}
-                                {(normalizedSubject === 'virtual-lab' || normalizedSubject === 'ai-education') && !fullPdf && !fullFlipbook && (
-                                    <p className="text-base text-gray-600">No PDF or Flipbook available.</p>
+                            <motion.div
+                                initial={{ opacity: 0, y: 15 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.7, duration: 0.5 }}
+                                className="flex flex-col gap-3"
+                            >
+                                {renderLink(
+                                    fullPdf,
+                                    t.viewPdf,
+                                    'bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 hover:from-orange-600 hover:via-pink-600 hover:to-purple-600',
+                                    lang === 'en' ? `View ${subject} ${t.gradeLabel} ${grade} PDF` : `មើល ${subject} ${t.gradeLabel} ${grade} PDF`
                                 )}
-                            </div>
+                                {renderLink(
+                                    fullFlipbook,
+                                    t.viewFlipbook,
+                                    'bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 hover:from-teal-600 hover:via-blue-600 hover:to-purple-600',
+                                    lang === 'en' ? `View ${subject} ${t.gradeLabel} ${grade} Flipbook` : `មើល ${subject} ${t.gradeLabel} ${grade} Flipbook`
+                                )}
+                                {(normalizedSubject === 'virtual-lab' || normalizedSubject === 'ai-education') && !fullPdf && !fullFlipbook && (
+                                    <motion.p
+                                        initial={{ opacity: 0, y: 15 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.8, duration: 0.5 }}
+                                        className="text-sm sm:text-base md:text-lg text-gray-600 font-sans"
+                                    >
+                                        No PDF or Flipbook available.
+                                    </motion.p>
+                                )}
+                            </motion.div>
                         )}
                         {fullAiTools.length > 0 && normalizedSubject === 'ai-education' && (
-                            <div className="flex flex-col gap-3 mt-4 overflow-y-auto max-h-48">
-                                <p className="text-lg font-bold font-sans text-gray-700">{t.aiTools}</p>
+                            <motion.div
+                                initial={{ opacity: 0, y: 15 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.9, duration: 0.5 }}
+                                className="flex flex-col gap-3 mt-4 overflow-y-auto max-h-48"
+                            >
+                                <p className="text-sm sm:text-base md:text-lg font-semibold text-gray-700 font-sans flex items-center">
+                                    <span className="mr-2 sm:mr-3 text-sm sm:text-base md:text-lg">🤖</span>
+                                    {t.aiTools}
+                                </p>
                                 {fullAiTools.map((tool, index) => renderLink(
                                     tool.url,
                                     lang === 'en' ? (tool.name || `AI Tool ${index + 1}`) : (tool.name || `ឧបករណ៍ AI ${index + 1}`),
-                                    'bg-purple-600',
+                                    'bg-gradient-to-r from-purple-500 via-blue-500 to-teal-500 hover:from-purple-600 hover:via-blue-600 hover:to-teal-600',
                                     lang === 'en' ? `Visit ${tool.name || 'AI Tool'} for ${t.gradeLabel} ${grade}` : `ចូលមើល ${tool.name || 'ឧបករណ៍ AI'} សម្រាប់ ${t.gradeLabel} ${grade}`
                                 ))}
-                            </div>
+                            </motion.div>
                         )}
                         {fullVirtualLabLinks.length > 0 && normalizedSubject !== 'ai-education' && (
-                            <div className="flex flex-col gap-3 mt-4">
-                                <p className="text-lg font-bold font-sans text-gray-700">{t.virtualLabs}</p>
+                            <motion.div
+                                initial={{ opacity: 0, y: 15 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.9, duration: 0.5 }}
+                                className="flex flex-col gap-3 mt-4"
+                            >
+                                <p className="text-sm sm:text-base md:text-lg font-semibold text-gray-700 font-sans flex items-center">
+                                    <span className="mr-2 sm:mr-3 text-sm sm:text-base md:text-lg">🔬</span>
+                                    {t.virtualLabs}
+                                </p>
                                 {fullVirtualLabLinks.map((lab, index) => renderLink(
                                     lab.url,
                                     lang === 'en' ? (lab.name || `Virtual Lab ${index + 1}`) : (lab.name || `មន្ទីរពិសោធន៍និម្មិត ${index + 1}`),
-                                    'bg-blue-600',
+                                    'bg-gradient-to-r from-blue-500 via-teal-500 to-green-500 hover:from-blue-600 hover:via-teal-600 hover:to-green-600',
                                     lang === 'en' ? `Visit ${lab.name || 'Virtual Lab'} for ${t.gradeLabel} ${grade}` : `ចូលមើល ${lab.name || 'មន្ទីរពិសោធន៍និម្មិត'} សម្រាប់ ${t.gradeLabel} ${grade}`
                                 ))}
-                            </div>
+                            </motion.div>
                         )}
                     </div>
                 ) : (
-                    <div className="p-4 bg-red-50 border-l-4 border-red-600 rounded-lg" aria-live="polite">
-                        <p className="text-base font-bold font-sans text-red-700">
+                    <motion.div
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.6, duration: 0.5 }}
+                        className="p-4 bg-red-50 border-l-4 border-red-600 rounded-lg"
+                        aria-live="polite"
+                    >
+                        <p className="text-sm sm:text-base md:text-lg font-semibold text-red-700 font-sans">
                             {isValidGrade
                                 ? isValidProgram
-                                    ? `${t.noMaterials} ${subject} ${lang === 'en' ? 'in' : 'ក្នុង'} ${programDisplay[lang]} ${t.programLabel} ${lang === 'en' ? 'for' : 'សម្រាប់'} ${t.gradeLabel} ${grade}.`
-                                    : `${t.invalidProgram} ${program} ${lang === 'en' ? 'for' : 'សម្រាប់'} ${t.gradeLabel} ${grade}.`
+                                    ? `${t.noMaterials} ${subject} ${lang === 'en' ? 'in' : 'ក្នុង'} ${programDisplay[lang]} ${t.programLabel} ${lang === 'en' ? 'for' : 'សម្រាប់'} ${t.gradeLabel} ${lang === 'km' ? numberMap[grade] || grade : grade}.`
+                                    : `${t.invalidProgram} ${program} ${lang === 'en' ? 'for' : 'សម្រាប់'} ${t.gradeLabel} ${lang === 'km' ? numberMap[grade] || grade : grade}.`
                                 : `${t.invalidGrade} ${grade}.`}
                         </p>
-                        <p className="text-base font-bold font-sans text-red-700 mt-2">
+                        <p className="text-sm sm:text-base md:text-lg font-semibold text-red-700 font-sans mt-2">
                             {t.checkDetails}
                             <a
                                 href="https://t.me/DrHelloWorld"
-                                className="text-indigo-600 hover:text-indigo-700 underline transition-all duration-300 ml-1"
+                                className="text-indigo-600 hover:text-indigo-700 underline transition-all duration-300 ml-1 font-sans font-medium"
                                 aria-label={lang === 'en' ? 'Contact support' : 'ទាក់ទងផ្នែកជំនួយ'}
                             >
                                 {t.contactSupport}
                             </a>
                             {t.assistance}
                         </p>
-                    </div>
+                    </motion.div>
                 )}
-                <div className="mt-4 border-b-4 border-indigo-600 w-1/2 mx-auto"></div>
+
+                {/* Bottom Divider */}
+                <motion.div
+                    initial={{ opacity: 0, scaleX: 0 }}
+                    animate={{ opacity: 1, scaleX: 1 }}
+                    transition={{ delay: 0.8, duration: 0.5 }}
+                    className="mt-6 sm:mt-8 md:mt-10 border-b-4 bg-gradient-to-r from-orange-600 to-purple-600 w-1/2 mx-auto"
+                ></motion.div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

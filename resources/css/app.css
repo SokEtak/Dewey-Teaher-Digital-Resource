@@ -1,4 +1,9 @@
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+Khmer:wght@400;500;600&display=swap');
+.font-sans {
+    font-family: Inter, 'Khmer OS Battambang', system-ui, -apple-system, sans-serif;
+}
+
 @plugin 'tailwindcss-animate';
 
 @source '../views';
