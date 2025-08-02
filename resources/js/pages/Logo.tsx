@@ -26,7 +26,7 @@ const Logo = ({ lang }: LogoProps) => {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                className="text-2xl sm:text-3xl md:text-3xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent battambang-font"
+                className="text-2xl sm:text-3xl md:text-3xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent py-2"
             >
                 {isKhmer ? 'សាលាអន្តរជាតិ ឌូវី' : 'Dewey International School'}
             </motion.h1>
@@ -34,7 +34,7 @@ const Logo = ({ lang }: LogoProps) => {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-2xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent battambang-font"
+                className="text-2xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent battambang-font p-2"
             >
                 {isKhmer ? 'ការសិក្សាផ្សារភ្ជាប់ជាមួយការអនុវត្ត' : 'Learning By Doing'}
             </motion.h1>

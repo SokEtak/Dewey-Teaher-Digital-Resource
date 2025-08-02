@@ -68,10 +68,10 @@ const GradeSelectionCard = ({ lang, setLang, grade, setGrade, program, url }: Gr
                             </SelectTrigger>
                             <SelectContent className="bg-white text-gray-900 rounded-2xl border border-blue-300 shadow-xl battambang-font text-base sm:text-lg">
                                 <SelectGroup>
-                                    <SelectItem value="en" className="hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 transition-colors duration-200 py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-5">
+                                    <SelectItem value="en" className="hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 transition-colors duration-200 py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-5">
                                         English
                                     </SelectItem>
-                                    <SelectItem value="km" className="hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 transition-colors duration-200 py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-5">
+                                    <SelectItem value="km" className="hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 transition-colors duration-200 py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-5">
                                         ខ្មែរ
                                     </SelectItem>
                                 </SelectGroup>
@@ -106,7 +106,7 @@ const GradeSelectionCard = ({ lang, setLang, grade, setGrade, program, url }: Gr
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
-                    className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-8 sm:mb-10 md:mb-12 text-center battambang-font"
+                    className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 text-center battambang-font p-2"
                 >
                     {program ? programText : '-'}
                 </motion.h2>
@@ -119,7 +119,7 @@ const GradeSelectionCard = ({ lang, setLang, grade, setGrade, program, url }: Gr
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
-                    className="mb-10 sm:mb-12 md:mb-14 relative"
+                    className="mb-6 sm:mb-8 md:mb-10 relative"
                 >
                     <label className="block mb-2 sm:mb-3 md:mb-4 text-sm sm:text-base md:text-lg font-semibold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent battambang-font flex items-center">
                         {isKhmer ? 'ជ្រើសរើសថ្នាក់' : 'Choose Grade'}
@@ -134,7 +134,7 @@ const GradeSelectionCard = ({ lang, setLang, grade, setGrade, program, url }: Gr
                                     <SelectItem
                                         key={i + 1}
                                         value={`${i + 1}`}
-                                        className="hover:bg-gradient-to-r hover:from-teal-100 hover:to-blue-100 transition-colors duration-200 py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-5"
+                                        className="hover:bg-gradient-to-r hover:from-orange-500 hover:to-pink-500 transition-colors duration-200 py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-5"
                                     >
                                         <span className="inline-flex items-center space-x-1">
                                             <span>{isKhmer ? 'ថ្នាក់ទី' : 'Grade'}</span>

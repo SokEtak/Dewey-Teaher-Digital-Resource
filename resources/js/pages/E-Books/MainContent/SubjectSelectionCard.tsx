@@ -160,7 +160,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
             "cambodia": [
                 { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
                 { value: 'chemistry', en: 'Chemistry', km: 'គីមីវិទ្យា' },
-                { value: 'biology', en: 'Biology', km: 'ជីវវိទ្យា' },
+                { value: 'biology', en: 'Biology', km: 'ជីវវិទ្យា' },
                 { value: 'history', en: 'History', km: 'ប្រវិត្តវិទ្យា' },
                 { value: 'geology', en: 'Geology', km: 'ផែនដីវិទ្យា' },
                 { value: 'geography', en: 'Geography', km: 'ភូមិវិទ្យា' },
@@ -174,12 +174,12 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
         },
         "12": {
             "cambodia": [
-                { value: 'math', en: 'Mathematics', km: 'គណិតវိទ្យា' },
+                { value: 'math', en: 'Mathematics', km: 'គណិតវិទ្យា' },
                 { value: 'chemistry', en: 'Chemistry', km: 'គីមីវិទ្យា' },
                 { value: 'biology', en: 'Biology', km: 'ជីវវិទ្យា' },
                 { value: 'history', en: 'History', km: 'ប្រវិត្តវិទ្យា' },
                 { value: 'geology', en: 'Earth And Environmental Science', km: 'ផែនដីវិទ្យានិងបរិស្ថានវិទ្យា' },
-                { value: 'geography', en: 'Geography', km: 'ភூមិវិទ្យា' },
+                { value: 'geography', en: 'Geography', km: 'ភូមិវិទ្យា' },
                 { value: 'physics', en: 'Physics', km: 'រូបវិទ្យា' },
                 { value: 'morality', en: 'Morality-Civics', km: 'សីលធម៌-ពលរដ្ធ' },
                 { value: 'english', en: 'English', km: 'ភាសាអង់គ្លេស' },
@@ -227,7 +227,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 <Head title={isKhmer ? 'ជ្រើសរើសមុខវិជ្ជា' : 'Subject Selection'} />
 
                 {/* Language Toggle */}
-                <div className="mb-6 sm:mb-8 md:mb-10 relative">
+                <div className="mb-4 sm:mb-6 md:mb-8 relative">
                     <motion.div
                         onHoverStart={() => setLangHovered(true)}
                         onHoverEnd={() => setLangHovered(false)}
@@ -240,10 +240,10 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                             </SelectTrigger>
                             <SelectContent className="bg-white text-gray-900 rounded-2xl border border-blue-300 shadow-xl font-sans text-base sm:text-lg">
                                 <SelectGroup>
-                                    <SelectItem value="en" className="hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 transition-colors duration-300 py-3 sm:py-4 md:py-5 px-4 sm:px-5 md:px-6 font-medium">
+                                    <SelectItem value="en" className="hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 transition-colors duration-300 py-3 sm:py-4 md:py-5 px-4 sm:px-5 md:px-6 font-medium">
                                         English
                                     </SelectItem>
-                                    <SelectItem value="km" className="hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 transition-colors duration-300 py-3 sm:py-4 md:py-5 px-4 sm:px-5 md:px-6 font-medium">
+                                    <SelectItem value="km" className="hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 transition-colors duration-300 py-3 sm:py-4 md:py-5 px-4 sm:px-5 md:px-6 font-medium">
                                         ខ្មែរ
                                     </SelectItem>
                                 </SelectGroup>
@@ -278,7 +278,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
-                    className="text-lg sm:text-xl md:text-2xl font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-8 sm:mb-10 md:mb-12 text-center font-sans"
+                    className="text-lg sm:text-2xl md:text-3xl font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 text-center font-sans p-2"
                 >
                     {programText}
                 </motion.h2>
@@ -288,7 +288,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
-                    className="text-lg sm:text-xl md:text-2xl font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-2 text-center font-sans"
+                    className="text-lg sm:text-2xl md:text-3xl font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-2 text-center font-sans p-2"
                 >
                     {isKhmer ? 'ជ្រើសរើសមុខវិជ្ជាសម្រាប់' : 'Choose Your Subject For'}
                 </motion.h1>
@@ -298,7 +298,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.5, duration: 0.5 }}
-                    className="text-lg sm:text-xl md:text-2xl font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-8 sm:mb-10 md:mb-12 text-center font-sans"
+                    className="text-lg sm:text-xl md:text-2xl font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 text-center font-sans"
                 >
                     {gradeText}
                 </motion.h2>
@@ -311,10 +311,10 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.5 }}
-                    className="mb-10 sm:mb-12 md:mb-14 relative"
+                    className="mb-6 sm:mb-8 md:mb-10 relative"
                 >
                     <label className="block mb-2 sm:mb-3 md:mb-4 text-sm sm:text-base md:text-lg font-medium bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent font-sans flex items-center">
-                        {isKhmer ? 'ជ្រើសរើសមុខវិជ្ជា' : 'Select a Subject'}
+                        {isKhmer ? 'មុខវិជ្ជា' : 'Subject'}
                     </label>
                     <Select onValueChange={setSubject} value={subject}>
                         <SelectTrigger className="w-full bg-gradient-to-r from-teal-50 to-blue-50 text-gray-900 rounded-2xl p-4 sm:p-5 md:p-6 border border-teal-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 font-sans shadow-md text-base sm:text-lg">
@@ -326,7 +326,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                                     <SelectItem
                                         key={subj.value}
                                         value={subj.value}
-                                        className="hover:bg-gradient-to-r hover:from-teal-100 hover:to-blue-100 transition-colors duration-300 py-3 sm:py-4 md:py-5 px-4 sm:px-5 md:px-6 font-medium"
+                                        className="hover:bg-gradient-to-r hover:from-orange-500 hover:to-pink-500 transition-colors duration-300 py-3 sm:py-4 md:py-5 px-4 sm:px-5 md:px-6 font-medium"
                                     >
                                         {isKhmer ? subj.km : subj.en}
                                     </SelectItem>
@@ -367,7 +367,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                     initial={{ opacity: 0, scaleX: 0 }}
                     animate={{ opacity: 1, scaleX: 1 }}
                     transition={{ delay: 0.8, duration: 0.5 }}
-                    className="mt-6 sm:mt-8 md:mt-10 border-b-4 bg-gradient-to-r from-orange-600 to-purple-600 w-1/2 mx-auto"
+                    className="mt-4 sm:mt-6 md:mt-8 border-b-4 bg-gradient-to-r from-orange-600 to-purple-600 w-1/2 mx-auto"
                 ></motion.div>
             </div>
         </motion.div>

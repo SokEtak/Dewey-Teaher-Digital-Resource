@@ -43,7 +43,7 @@ const ProgramContent = ({ lang, setLang, campus, setCampus, program, setProgram 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="flex w-full max-w-sm sm:max-w-md md:max-w-xl p-4 sm:p-6 md:p-8 items-center justify-center mx-auto"
+            className="flex w-full max-w-sm sm:max-w-md md:max-w-xl sm:p-6 md:p-8 items-center justify-center"
         >
             <div className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-3xl shadow-2xl p-6 sm:p-8 md:p-10 w-full border border-purple-300 transition-all duration-500 hover:shadow-3xl battambang-font relative overflow-hidden">
                 <Head title={isKhmer ? 'ជ្រើសរើសកម្មវិធីសិក្សា' : 'Program Selection'} />
@@ -60,7 +60,7 @@ const ProgramContent = ({ lang, setLang, campus, setCampus, program, setProgram 
                 />
 
                 {/* Language Toggle */}
-                <div className="mb-6 sm:mb-8 md:mb-10 relative">
+                <div className="relative mb-4 sm:mb-6 md:mb-8">
                     <motion.div
                         onHoverStart={() => setLangHovered(true)}
                         onHoverEnd={() => setLangHovered(false)}
@@ -71,12 +71,12 @@ const ProgramContent = ({ lang, setLang, campus, setCampus, program, setProgram 
                             <SelectTrigger className="w-full bg-gradient-to-r from-blue-50 to-purple-50 text-gray-900 rounded-2xl p-3 sm:p-4 md:p-5 border border-blue-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 battambang-font shadow-md text-base sm:text-lg">
                                 <SelectValue placeholder={isKhmer ? "ជ្រើសរើសភាសា" : "Select language"} />
                             </SelectTrigger>
-                            <SelectContent className="bg-white text-gray-900 rounded-2xl border border-blue-300 shadow-xl battambang-font text-base sm:text-lg">
+                            <SelectContent className="bg-white text-gray-900 rounded-2xl border border-green-600 shadow-xl battambang-font text-base sm:text-lg max-h-60 overflow-hidden">
                                 <SelectGroup>
-                                    <SelectItem value="en" className="hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 transition-colors duration-200 py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-5">
+                                    <SelectItem value="en" className="hover:bg-gradient-to-r hover:from-orange-500 hover:to-pink-500 transition-colors duration-200 py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-5">
                                         English
                                     </SelectItem>
-                                    <SelectItem value="km" className="hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 transition-colors duration-200 py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-5">
+                                    <SelectItem value="km" className="hover:bg-gradient-to-r hover:from-orange-500 hover:to-pink-500 transition-colors duration-200 py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-5">
                                         ខ្មែរ
                                     </SelectItem>
                                 </SelectGroup>
@@ -86,45 +86,45 @@ const ProgramContent = ({ lang, setLang, campus, setCampus, program, setProgram 
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="absolute bottom-[-2rem] sm:bottom-[-2.5rem] left-0 text-sm sm:text-base bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent battambang-font bg-blue-50 px-2 sm:px-3 md:px-4 py-1 sm:py-1 md:py-2 rounded-lg shadow-md"
+                                className="absolute bottom-[-2rem] sm:bottom-[-2.5rem] left-0 text-base sm:text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent battambang-font bg-blue-50 px-2 sm:px-3 md:px-4 py-1 sm:py-1 md:py-2 rounded-lg shadow-md"
                             >
-                                {isKhmer ? 'ជ្រើសរើសភាសា' : 'Choose your conformable language!'}
+                                {isKhmer ? 'ជ្រើសរើសភាសា' : 'Choose Your Comfort Language!'}
                             </motion.div>
                         )}
                     </motion.div>
                 </div>
 
                 <motion.h2
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
-                    className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-8 sm:mb-10 md:mb-12 text-center battambang-font"
+                    className="block sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent battambang-font text-center items-center min-h-[3rem] py-2 mb-6 sm:mb-8 md:mb-10"
                 >
-                    {isKhmer ? 'ជ្រើសរើសទីតាំង និង កម្មវីធី' : 'Choose Your Educated Campus & Program'}
+                    {isKhmer ? 'ជ្រើសរើសទីតាំង និង កម្មវីធីវិធីសិក្សា' : 'Choose Campus & Program'}
                 </motion.h2>
 
                 {/* Campus Select */}
-                <div className="mb-8 sm:mb-10 md:mb-12 relative">
-                    <label className="block mb-2 sm:mb-3 md:mb-4 text-sm sm:text-base md:text-lg font-semibold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent battambang-font flex items-center">
+                <div className="relative mb-6 sm:mb-8 md:mb-10">
+                    <label className="block mb-2 sm:mb-3 md:mb-4 text-sm sm:text-base md:text-lg font-semibold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent battambang-font items-center">
                         {isKhmer ? 'ទីតាំង' : 'Campus'}
                     </label>
                     <motion.div
                         onHoverStart={() => setCampusHovered(true)}
                         onHoverEnd={() => setCampusHovered(false)}
                         whileHover={{ scale: 1.02, translateY: -2 }}
-                        className="relative"
+                        className="relative overflow-hidden"
                     >
                         <Select onValueChange={setCampus} value={campus}>
                             <SelectTrigger className="w-full bg-gradient-to-r from-teal-50 to-blue-50 text-gray-900 rounded-2xl p-4 sm:p-5 md:p-6 border border-teal-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 battambang-font shadow-md text-base sm:text-lg">
                                 <SelectValue placeholder={isKhmer ? "ជ្រើសរើសទីតាំង" : "Select a campus"} />
                             </SelectTrigger>
-                            <SelectContent className="bg-white text-gray-900 rounded-2xl border border-teal-300 shadow-xl battambang-font max-h-60 sm:max-h-64 md:max-h-72 overflow-y-auto text-base sm:text-lg">
+                            <SelectContent className="bg-white text-gray-900 rounded-2xl border border-teal-300 shadow-xl battambang-font max-h-60 sm:max-h-64 md:max-h-72 overflow-y-auto overflow-hidden">
                                 <SelectGroup>
                                     {campuses.map((c) => (
                                         <SelectItem
                                             key={c.value}
                                             value={c.value}
-                                            className="hover:bg-gradient-to-r hover:from-teal-100 hover:to-blue-100 transition-colors duration-200 py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-5"
+                                            className="hover:bg-gradient-to-r hover:from-orange-500 hover:to-pink-500 transition-colors duration-200 py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-5"
                                         >
                                             {isKhmer ? c.labelKm : c.labelEn}
                                         </SelectItem>
@@ -138,14 +138,14 @@ const ProgramContent = ({ lang, setLang, campus, setCampus, program, setProgram 
                                 animate={{ opacity: 1, y: 0 }}
                                 className="absolute bottom-[-2rem] sm:bottom-[-2.5rem] left-0 text-sm sm:text-base bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent battambang-font bg-teal-50 px-2 sm:px-3 md:px-4 py-1 sm:py-1 md:py-2 rounded-lg shadow-md"
                             >
-                                {isKhmer ? 'ជ្រើសរើសទីតាំងសាលាដែលអ្នកបង្រៀន' : 'Pick your educated campus'}
+                                {isKhmer ? 'ជ្រើសរើសទីតាំងសាលាដែលអ្នកបង្រៀន' : 'Pick Your Educated Campus'}
                             </motion.div>
                         )}
                     </motion.div>
                 </div>
 
                 {/* Program Select */}
-                <div className="mb-10 sm:mb-12 md:mb-14 relative">
+                <div className="relative mb-8 sm:mb-10 md:mb-12">
                     <label className="block mb-2 sm:mb-3 md:mb-4 text-sm sm:text-base md:text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent battambang-font flex items-center">
                         {isKhmer ? 'កម្មវិធីសិក្សា' : 'Program'}
                     </label>
@@ -153,19 +153,19 @@ const ProgramContent = ({ lang, setLang, campus, setCampus, program, setProgram 
                         onHoverStart={() => setProgramHovered(true)}
                         onHoverEnd={() => setProgramHovered(false)}
                         whileHover={{ scale: 1.02, translateY: -2 }}
-                        className="relative"
+                        className="relative overflow-hidden"
                     >
                         <Select onValueChange={setProgram} value={program}>
                             <SelectTrigger className="w-full bg-gradient-to-r from-purple-50 to-pink-50 text-gray-900 rounded-2xl p-4 sm:p-5 md:p-6 border border-purple-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 battambang-font shadow-md text-base sm:text-lg">
                                 <SelectValue placeholder={isKhmer ? "ជ្រើសរើសកម្មវិធី" : "Select a program"} />
                             </SelectTrigger>
-                            <SelectContent className="bg-white text-gray-900 rounded-2xl border border-purple-300 shadow-xl battambang-font text-base sm:text-lg">
+                            <SelectContent className="bg-white text-gray-900 rounded-2xl border border-purple-300 shadow-xl battambang-font max-h-60 overflow-y-auto overflow-hidden">
                                 <SelectGroup>
                                     {programs.map((p) => (
                                         <SelectItem
                                             key={p.value}
                                             value={p.value}
-                                            className="hover:bg-gradient-to-r hover:from-purple-100 hover:to-pink-100 transition-colors duration-200 py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-5"
+                                            className="hover:bg-gradient-to-r hover:from-orange-500 hover:to-pink-500 transition-colors duration-200 py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-5"
                                         >
                                             {isKhmer ? p.labelKm : p.labelEn}
                                         </SelectItem>
@@ -179,7 +179,7 @@ const ProgramContent = ({ lang, setLang, campus, setCampus, program, setProgram 
                                 animate={{ opacity: 1, y: 0 }}
                                 className="absolute bottom-[-2rem] sm:bottom-[-2.5rem] left-0 text-sm sm:text-base bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent battambang-font bg-purple-50 px-2 sm:px-3 md:px-4 py-1 sm:py-1 md:py-2 rounded-lg shadow-md"
                             >
-                                {isKhmer ? 'ជ្រើសរើសកម្មវិធីសិក្សាដែលអ្នកចាប់អារម្មណ៍' : 'Choose your learning path!'}
+                                {isKhmer ? 'ជ្រើសរើសកម្មវិធីសិក្សា' : 'Choose Your Educated Program!'}
                             </motion.div>
                         )}
                     </motion.div>
