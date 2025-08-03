@@ -329,7 +329,7 @@ const LessonCard: React.FC<LessonCardProps> = ({
         km: {
             title: 'សម្ភារៈសិក្សា',
             gradeLabel: 'ថ្នាក់ទី',
-            programLabel: 'កម្មវិធីសិក្សា',
+            programLabel: 'កម្មវិធី',
             subjectLabel: 'មុខវិជ្ជា',
             accessMaterials: 'ចូលប្រើសម្ភារៈសិក្សា:',
             aiTools: 'ឧបករណ៍អប់រំ AI:',
@@ -452,21 +452,21 @@ const LessonCard: React.FC<LessonCardProps> = ({
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
-                    className="block sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent battambang-font text-center items-center min-h-[3rem] py-2 mb-6 sm:mb-8 md:mb-10"
+                    className="text-2xl sm:text-3xl md:text-3xl font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 text-center font-sans p-1"
                 >
                     {t.title}
                 </motion.h2>
 
                 {/* Grade and Program */}
                 <div className="relative mb-6 sm:mb-8 md:mb-10">
-                    <label className="block mb-2 sm:mb-3 md:mb-4 text-sm sm:text-base md:text-lg font-semibold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent battambang-font items-center">
+                    <label className="text-xl sm:text-2xl md:text-1xl font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8  font-sans p-1">
                         {t.gradeLabel} {lang === 'km' ? numberMap[grade] || grade : grade}: {programDisplay[lang]} {t.programLabel}
                     </label>
                 </div>
 
                 {/* Subject */}
                 <div className="relative mb-6 sm:mb-8 md:mb-10">
-                    <label className="block mb-2 sm:mb-3 md:mb-4 text-sm sm:text-base md:text-lg font-semibold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent battambang-font items-center">
+                    <label className="block text-xl md:text-2xl mb-2 sm:mb-3 md:mb-4 sm:text-base font-semibold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent battambang-font items-center p-1">
                         {t.subjectLabel}: {lang === 'km' ? subjectTranslations[normalizedSubject] || subject : subject.charAt(0).toUpperCase() + subject.slice(1)}
                     </label>
                 </div>
@@ -477,7 +477,7 @@ const LessonCard: React.FC<LessonCardProps> = ({
                             initial={{ opacity: 0, y: 15 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6, duration: 0.5 }}
-                            className="text-sm sm:text-base md:text-lg font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent battambang-font flex items-center"
+                            className="text-2xl sm:text-2xl md:text-3xl font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 text-center font-sans p-1"
                         >
                             {t.accessMaterials}
                         </motion.p>

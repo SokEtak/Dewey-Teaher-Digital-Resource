@@ -34,7 +34,7 @@ const GradeSelectionCard = ({ lang, setLang, grade, setGrade, program, url }: Gr
 
     const programText =
         program === "cambodia"
-            ? (isKhmer ? "កម្មវិធីសិក្សាខ្មែរ" : "Cambodia Curriculum")
+            ? (isKhmer ? "កម្មវិធីខ្មែរ" : "Cambodia Curriculum")
             : program === "america"
                 ? (isKhmer ? "កម្មវិធីសិក្សាអាមេរិកកាំង" : "American Curriculum")
                 : (isKhmer ? "កម្មវិធីសិក្សាបន្ថែម" : "Extra Curricular Curriculum");
@@ -106,7 +106,7 @@ const GradeSelectionCard = ({ lang, setLang, grade, setGrade, program, url }: Gr
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
-                    className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 text-center battambang-font p-2"
+                    className="text-2xl sm:text-3xl md:text-3xl font-bold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 text-center battambang-font p-2"
                 >
                     {program ? programText : '-'}
                 </motion.h2>
@@ -121,8 +121,8 @@ const GradeSelectionCard = ({ lang, setLang, grade, setGrade, program, url }: Gr
                     transition={{ delay: 0.4, duration: 0.5 }}
                     className="mb-6 sm:mb-8 md:mb-10 relative"
                 >
-                    <label className="block mb-2 sm:mb-3 md:mb-4 text-sm sm:text-base md:text-lg font-semibold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent battambang-font flex items-center">
-                        {isKhmer ? 'ជ្រើសរើសថ្នាក់' : 'Choose Grade'}
+                    <label className="block mb-2 text-xl sm:mb-3 md:mb-4 text-2sm sm:text-base md:text-lg font-semibold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent battambang-font flex items-center p-1">
+                        {isKhmer ? 'សូមជ្រើសរើសថ្នាក់' : 'Choose Grade'}
                     </label>
                     <Select onValueChange={setGrade} value={grade}>
                         <SelectTrigger className="w-full bg-gradient-to-r from-teal-50 to-blue-50 text-gray-900 rounded-2xl p-4 sm:p-5 md:p-6 border border-teal-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 battambang-font shadow-md text-base sm:text-lg">

@@ -200,10 +200,10 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
     // Map program text
     const programText = program
         ? (program === "cambodia"
-            ? (lang === 'en' ? "Cambodia Curriculum" : "កម្មវិធីសិក្សាខ្មែរ")
+            ? (lang === 'en' ? "Cambodia Curriculum" : "កម្មវិធីខ្មែរ")
             : program === "america"
-                ? (lang === 'en' ? "American Curriculum" : "កម្មវិធីសិក្សាអាមេរិកកាំង")
-                : (lang === 'en' ? "Extra Curricular Curriculum" : "កម្មវិធីសិក្សាបន្ថែម"))
+                ? (lang === 'en' ? "American Curriculum" : "កម្មវិធីអាមេរិកកាំង")
+                : (lang === 'en' ? "Extra Curricular Curriculum" : "កម្មវិធីបន្ថែម"))
         : '-';
 
     // Get subjects for the current grade and program, default to empty array if invalid
@@ -278,7 +278,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
-                    className="text-lg sm:text-2xl md:text-3xl font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 text-center font-sans p-2"
+                    className="text-2xl sm:text-2xl md:text-3xl font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 text-center font-sans p-1"
                 >
                     {programText}
                 </motion.h2>
@@ -288,7 +288,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
-                    className="text-lg sm:text-2xl md:text-3xl font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-2 text-center font-sans p-2"
+                    className="text-2xl sm:text-2xl md:text-3xl font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-2 text-center font-sans p-1"
                 >
                     {isKhmer ? 'ជ្រើសរើសមុខវិជ្ជាសម្រាប់' : 'Choose Your Subject For'}
                 </motion.h1>
@@ -298,7 +298,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.5, duration: 0.5 }}
-                    className="text-lg sm:text-xl md:text-2xl font-semibold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 text-center font-sans"
+                    className="text-2xl sm:text-3xl md:text-3xl font-semibold bg-gradient-to-r from-yellow-500 to-orange-600 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 text-center font-sans p-1"
                 >
                     {gradeText}
                 </motion.h2>
@@ -313,14 +313,14 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                     transition={{ delay: 0.6, duration: 0.5 }}
                     className="mb-6 sm:mb-8 md:mb-10 relative"
                 >
-                    <label className="block mb-2 sm:mb-3 md:mb-4 text-sm sm:text-base md:text-lg font-medium bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent font-sans flex items-center">
+                    <label className="block mb-2 text-xl sm:mb-3 md:mb-4 text-2sm sm:text-base md:text-lg font-semibold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent battambang-font flex items-center p-1">
                         {isKhmer ? 'មុខវិជ្ជា' : 'Subject'}
                     </label>
                     <Select onValueChange={setSubject} value={subject}>
                         <SelectTrigger className="w-full bg-gradient-to-r from-teal-50 to-blue-50 text-gray-900 rounded-2xl p-4 sm:p-5 md:p-6 border border-teal-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 font-sans shadow-md text-base sm:text-lg">
                             <SelectValue placeholder={isKhmer ? 'ជ្រើសរើសមុខវិជ្ជា' : 'Select a subject'} />
                         </SelectTrigger>
-                        <SelectContent className="bg-white text-gray-900 rounded-2xl border border-teal-300 shadow-xl font-sans text-base sm:text-lg max-h-60 sm:max-h-64 md:max-h-72 overflow-y-auto">
+                        <SelectContent className="bg-white text-gray-900 rounded-2xl border border-teal-300 shadow-xl font-sans text-base sm:text-lg max-h-60 sm:max-h-74 md:max-h-72 overflow-y-auto">
                             <SelectGroup>
                                 {availableSubjects.map((subj) => (
                                     <SelectItem
