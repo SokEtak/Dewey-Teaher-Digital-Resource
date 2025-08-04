@@ -245,7 +245,7 @@ const LessonCard: React.FC<LessonCardProps> = ({
                 geology: { pdf: '10HNYy6nQBn8CZkOmucZhqXFZ73MLc3jp', flipbook: 'ebook.spm-edoc.com/ereading/Earth-EnvironmentGrade10/#p=1' },
                 biology: { pdf: '10HNYy6nQBn8CZkOmucZhqXFZ73MLc3jp', flipbook: 'ebook.spm-edoc.com/ereading/BiologyGrade10/#p=1' },
                 physics: { pdf: '10HNYy6nQBn8CZkOmucZhqXFZ73MLc3jp', flipbook: 'uouggg/cthz/', virtualLabLinks: commonResources.virtualLabLinksPhysics },
-                chemistry: { pdf: '10HNYy6nQBn8CZkOmucZhqXFZ73MLc3jp', flipbook: 'ebook.spm-edoc.com/ereading/ChemistryGrade10/#p=1', virtualLabLinks: commonResources.virtualLabLinksChemistry },
+                chemistry: { pdf: '10HNYy6nQBn8CZkOmucZhqXFZ73MLc3jp', flipbook: 'frszu/lyta/', virtualLabLinks: commonResources.virtualLabLinksChemistry },
                 morality: { pdf: '10HNYy6nQBn8CZkOmucZhqXFZ73MLc3jp', flipbook: 'ayjcf/sqlz/' },
                 khmer: { pdf: '10HNYy6nQBn8CZkOmucZhqXFZ73MLc3jp', flipbook: 'uouggg/sgvw/' },
                 english: { pdf: '#', flipbook: 'ebook.spm-edoc.com/ereading/EnglishGrade10/#p=1' },
