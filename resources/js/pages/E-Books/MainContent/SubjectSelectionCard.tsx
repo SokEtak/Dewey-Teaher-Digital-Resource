@@ -50,6 +50,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
                 { value: 'social', en: 'Social Science', km: 'សិក្សាសង្គម' },
                 { value: 'khmer', en: 'Khmer Language', km: 'ភាសាខ្មែរ' },
+                { value: 'sport', en: 'Sport', km: 'អប់រំកាយ និង កីឡា' },
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
@@ -60,6 +61,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
                 { value: 'social', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' },
                 { value: 'khmer', en: 'Khmer Language', km: 'ភាសាខ្មែរ' },
+                { value: 'sport', en: 'Sport', km: 'អប់រំកាយ និង កីឡា' },
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
@@ -71,6 +73,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'social', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' },
                 { value: 'reading', en: 'Reading', km: 'អំណាន' },
                 { value: 'khmer', en: 'Khmer Language', km: 'ភាសាខ្មែរ' },
+                { value: 'sport', en: 'Sport', km: 'អប់រំកាយ និង កីឡា' },
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
@@ -84,6 +87,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'english', en: 'English', km: 'ភាសាអង់គ្លេស' },
                 { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
                 { value: 'social', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' },
+                { value: 'sport', en: 'Sport', km: 'អប់រំកាយ និង កីឡា' },
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
@@ -95,6 +99,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'english', en: 'English', km: 'ភាសាអង់គ្លេស' },
                 { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
                 { value: 'social', en: 'Social Science', km: 'សិក្សាសង្គម' },
+                { value: 'sport', en: 'Sport', km: 'អប់រំកាយ និង កីឡា' },
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
@@ -107,6 +112,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'english', en: 'English', km: 'ភាសាអង់គ្លេស' },
                 { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
                 { value: 'social', en: 'Social Science', km: 'សិក្សាសង្គម' },
+                { value: 'sport', en: 'Sport', km: 'អប់រំកាយ និង កីឡា' },
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
@@ -118,6 +124,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'english', en: 'English', km: 'ភាសាអង់គ្លេស' },
                 { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
                 { value: 'social', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' },
+                { value: 'sport', en: 'Sport', km: 'អប់រំកាយ និង កីឡា' },
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
@@ -129,6 +136,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'english', en: 'English', km: 'ភាសាអង់គ្លេស' },
                 { value: 'science', en: 'Science', km: 'វិទ្យាីសាស្ត្រ' },
                 { value: 'social', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' },
+                { value: 'sport', en: 'Sport', km: 'អប់រំកាយ និង កីឡា' },
             ],
         },
         "9": {
@@ -138,6 +146,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'english', en: 'English', km: 'ភាសាអង់គ្លេស' },
                 { value: 'science', en: 'Science', km: 'វិទ្យាសាស្ត្រ' },
                 { value: 'social', en: 'Social Science', km: 'វិទ្យាសាស្ត្រ-សិក្សាសង្គម' },
+                { value: 'sport', en: 'Sport', km: 'អប់រំកាយ និង កីឡា' },
             ],
         },
         "10": {
@@ -152,6 +161,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'morality', en: 'Morality-Civics', km: 'សីលធម៌-ពលរដ្ធ' },
                 { value: 'khmer', en: 'Khmer Language', km: 'ភាសាខ្មែរ' },
                 { value: 'english', en: 'English', km: 'ភាសាអង់គ្លេស' },
+                { value: 'sport', en: 'Sport', km: 'អប់រំកាយ និង កីឡា' },
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
@@ -168,6 +178,7 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'morality', en: 'Morality', km: 'សីលធម៌-ពលរដ្ធ' },
                 { value: 'english', en: 'English', km: 'ភាសាអង់គ្លេស' },
                 { value: 'khmer', en: 'Khmer Language', km: 'អក្សរសាស្ត្រខ្មែរ' },
+                { value: 'sport', en: 'Sport', km: 'អប់រំកាយ និង កីឡា' },
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
                 { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
             ],
@@ -184,8 +195,9 @@ const SubjectSelectionCard = ({ lang, setLang, subject, setSubject, program, gra
                 { value: 'morality', en: 'Morality-Civics', km: 'សីលធម៌-ពលរដ្ធ' },
                 { value: 'english', en: 'English', km: 'ភាសាអង់គ្លេស' },
                 { value: 'khmer', en: 'Khmer Language', km: 'អក្សរសាស្ត្រខ្មែរ' },
+                { value: 'sport', en: 'Sport', km: 'អប់រំកាយ និង កីឡា' },
                 { value: 'virtual-lab', en: 'Virtual Lab', km: 'មន្ទីរពិសោធន៍និម្មិត' },
-                { value: 'ai-education', en: 'AI Education', km: 'ការអប់រំ AI' }
+                { value: 'ai-education', en: 'ការអប់រំ AI' }
             ],
         },
     };
